@@ -24,7 +24,9 @@ int main() {
     // parent
     close(sends[READ]);//can only write to sends file descriptors
     close(backs[WRITE]);//can only read from backs file descriptors
-    int num = 10;
+    int num;
+    printf("Enter a number:\n");
+    scanf("%d", &num);
     printf("Parent sending the number %d...\n", num);
     write(sends[WRITE], &num, sizeof(num));
     read(backs[READ], &num, sizeof(num));
